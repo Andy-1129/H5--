@@ -8,11 +8,11 @@ var plugin={
             types:["image"],//通过 HTML 页面 class名 获取到资源
             callback:function(src){
                 console.log(src);
-                //var id = src.src.toLowerCase().split("/").pop().split(".")[0];
-                var id = src.id.split(".")[0];
-                console.log(id);
+                var id = src.src.toLowerCase().split("/").pop().split(".")[0];
+                //var id = src.id.split(".")[0];
+
                 var img = document.getElementById(id);
-                console.log(img);
+
                 return {tag:img};
             }
         }
@@ -21,7 +21,7 @@ var plugin={
 
 preload.installPlugin(plugin);
 preload.loadManifest([
-    "aa.jpg",
-    "bb.jpg",
-    "cc.jpg"
+    "aa.png",
+    "bb.png",
+    "cc.png"
 ])

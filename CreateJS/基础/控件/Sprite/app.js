@@ -3,7 +3,7 @@ var stage,ss;
 stage = new createjs.Stage("canvas");
 ss = new createjs.SpriteSheet({//定义动画
   "images":["114.png"],//操作对象
-  "frame":{// 定义单个帧,中的内容
+  "frame":{// 定义m 单个帧,中的内容
     "width":61.4,
     "height":100,
     "count":21 //帧的总数

@@ -26,6 +26,13 @@ function addCircles(){
             if(indexX == 4 && indexY == 4){
                 c.setCircleType(1)
             }
+            c.addEventListener("click",function(e){
+                //判断当前位置是否为猫，不是 再执行下一动作
+                if(e.target.getCircleType() != 1){
+                    e.target.setCircleType(2);
+                }
+
+            })
         }
     }
 }

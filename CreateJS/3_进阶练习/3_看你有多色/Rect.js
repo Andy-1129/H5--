@@ -26,7 +26,7 @@ function Rect(n,color,clickColor){
         //结束绘制
         this.graphics.endFill();
     }
-    //创建getRectType 方法，得到方块颜色的类型
+    //创建getRectType 方法，得到方块颜色的类型，方便回调
     this.getRectType = function(){
         return this.rectType;
     }

@@ -18,8 +18,10 @@ function handleComplete(evt) {
 	//This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
 	var queue = evt.target;
 	var ssMetadata = lib.ssMetadata;
+	console.log(ssMetadata);
 	for(i=0; i<ssMetadata.length; i++) {
 		ss[ssMetadata[i].name] = new createjs.SpriteSheet( {"images": [queue.getResult(ssMetadata[i].name)], "frames": ssMetadata[i].frames} )
+		console.log(ssMetadata[i].name);
 	}
 
 

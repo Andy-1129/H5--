@@ -12,8 +12,9 @@ function addRect(){
     //其它方块颜色进行随机
     var cl = parseInt(Math.random()*1000000);
     var color = "#" + cl;
+    //要点击方块颜色进行随机
     var clickColor = "#" + (cl - 2510);
-    //要点击的方块的位置 随机
+    //要点击的方块的坐标位置 随机
     var x = parseInt(Math.random()*n);
     var y = parseInt(Math.random()*n);
     //通过 for 循环添加,x 轴方向添加 indexX：x轴方向的方块的个数
@@ -27,12 +28,12 @@ function addRect(){
             //设置每个r的坐标，以便获取其位置（以0~n整数为坐标）
             r.x = indexX;
             r.y = indexY;
-            //通过方块的坐标，判断是否是点击的方块
+            //通过要点击的方块的坐标与所有方块坐标对比，确定其位置
             if(r.x == x && r.y == y){
-                //是，调用Rect.js 中的setRectType()方法设置要点击的方块的颜色类型 type=2
+                //调用Rect.js 中的setRectType()方法设置要点击的方块的颜色类型 type=2
                 r.setRectType(2);
             }
-            //将 画布 分成 n 个部分,每个对象的具体 px坐标（所占像素的大小）
+            //将 画布 分成 n 个部分,使每个方块都显示
             r.x = indexX*(400/n);
             r.y = indexY*(400/n);
             //判断是否为要点击的方块

@@ -15,7 +15,7 @@ let moveCat;
 let MOVE_NONE = -1,MOVE_LEFT = 0,MOVE_UPLeft = 1,MOVE_UPRight = 2,MOVE_RIGHT = 3,MOVE_DOWNRight = 4,MOVE_DOWNLeft = 5;
 //方法getMoveDir(cat)获得猫运动方向的状态码
 function getMoveDir(cat){
-    //声明数组变量，存储从猫的位置到已经选中小球中间有几个位置
+    //声明数组变量，存储猫向那个方向运动和能走几步
     let distanceMap = [];
     //left
     let can = true;
@@ -126,18 +126,19 @@ function getMoveDir(cat){
     if(can){
         return MOVE_DOWNRight;
     }
-    //六个方向都有选中小球后，猫在它们之间空余位置移动
+    //声明2个变量
     let maxDir = -1,maxValue = -1;
-    //遍历数组distanceMap，六个方向的猫和选中的小球之间的距离的值得个数
+    //遍历数组distanceMap，猫向6个方向和选中的小球之间的距离的值得个数
     for(let dir = 0;dir<distanceMap.length;dir++){
         //与 -1 比较，看是否有方向可走
         if(distanceMap[dir]>maxValue){
             //将猫和已选中的小球之间的距离 赋值给 maxValue
             maxValue = distanceMap[dir];
+            //能走的方向的代码赋值给 maxDir
             maxDir = dir;
         }
     }
-    //maxValue>1，可以走
+    //六个方向都有选中小球后，猫在它们之间空余位置移动
     if(maxValue>1){
         return maxDir;//返回方向的代码
     }else{

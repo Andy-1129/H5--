@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" manifest="save.appcache">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,15 +14,32 @@
     <button type="button" id="btn2">2</button>
 
     <script>
-        let arr = [0,1,2,3];
-        function getNum(){
-            let arr1 = [];
-            for(let i =0;i<arr.length;i++){
-                arr1.push(arr[i]);
-            }
-            return arr1;
-        }
-        console.log(getNum());
+        // let arr = [0,1,2,3];
+        // function getNum(){
+        //     let arr1 = [];
+        //     for(let i =0;i<arr.length;i++){
+        //         arr1.push(arr[i]);
+        //     }
+        //     return arr1;
+        // }
+        // console.log(getNum());
+
+        // js 更新 manifest 文件
+        window.addEventListener("load",function(){
+            //updateready 是 applicationCache的一个 API
+            window.applicationCache.addEventListener('updateready',function(e) {
+                 if(window.applicationCache.status==window.applicationCache.UPDATEREADY) {
+                     window.applicationCache .swapCache();
+                     if (confirm('A new version of this site is available. Load it?')) {
+                         window.location.reload(); }
+                     } else {
+                         console.log('manifest didn\'t change')
+                     }
+            }, false);
+        },false);
+
+        //检查网络是否在线，true在线
+        console.log(navigator.onLine);
     </script>
 
 

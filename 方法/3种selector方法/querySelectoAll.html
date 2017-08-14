@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h4>方法 二 querySelectorAll()接收一个CSS选择符，返回一个类数组对象NodeList的实例，\n
+    具体来说，返回的值实际上是带有所有属性和方法的NodeList\n
+    没有匹配元素时，返回空的类数组对象，而不是null</h4>
+    <div class="box" id="box1" style="height:50px;background-color:#562632;">box1</div>
+    <div class="box" id="box2" style="height:50px;background-color:#985471;">box2</div>
+    <ul id="list">
+        <li class="in" style="height: 30px;">List1</li>
+        <li class="in" style="height: 30px;" title="test">List2</li>
+        <li class="in" style="height: 30px;">List3</li>
+    </ul>
+
+    <script type="text/javascript">
+    //方法 二 querySelectorAll()接收一个CSS选择符，返回一个类数组对象NodeList的实例，具体来说，返回的值实际上是带有所有属性和方法的NodeList
+        // 通过 ID选择器取得元素, 只有一个 匹配一个
+        let oTitle2 = document.querySelectorAll('#box2');
+        console.log(oTitle2);
+        // 通过 类选择器取得元素
+        let oList = document.querySelectorAll('.in');
+        console.log(oList);
+        for( let i = 0;i<oList.length;i++){
+            console.log(oList[i].innerHTML);
+        }
+        // 通过 属性选择器取得元素
+        let oTitle = document.querySelectorAll('[title="test"]');
+        console.log(oTitle[0].innerHTML);
+        // 通过 标签选择器取得元素
+        let oh4 = document.querySelectorAll('h4');
+        console.log(oh4[0].style.width = "500px");
+    //没有匹配元素时，返回空的类数组对象，而不是null
+        let oNull = document.querySelectorAll('.null');
+        console.log(oNull);
+
+    </script>
+
+</body>
+</html>

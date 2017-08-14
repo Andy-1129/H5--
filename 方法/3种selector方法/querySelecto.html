@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>3种selector方法</title>
+</head>
+<body>
+    <h4>querySelector()方法接收一个CSS选择符，返回与该模式匹配的第一个元素，如果没有找到匹配的元素，返回null</h4>
+    <div class="box" id="box1" style="height:50px;background-color:#562632;">box1</div>
+    <div class="box" id="box2" style="height:50px;background-color:#985471;">box2</div>
+    <ul id="list">
+        <li class="in" style="height: 30px;">List1</li>
+        <li class="in" style="height: 30px;" title="test">List2</li>
+        <li class="in" style="height: 30px;">List3</li>
+    </ul>
+
+    <script type="text/javascript">
+    //方法一   querySelector()方法接收一个CSS选择符，返回与该模式匹配的第一个元素，如果没有找到匹配的元素，返回null
+        // 通过 ID选择器取得元素
+        let oTitle2 = document.querySelector('#box2');
+        console.log(oTitle2.innerHTML);
+        // 通过 类选择器取得元素
+        let oBox = document.querySelector('.box');
+        console.dir(oBox);
+        console.log(oBox.style.height);
+        console.log(oBox.length);
+        console.log(oBox.textContent = "123456789");
+        console.log(oBox.innerHTML);
+        // 通过 属性选择器取得元素
+        let oTitle = document.querySelector('[title="test"]');
+        console.log(oTitle.innerHTML);
+
+    //没有 返回null
+        let oNull = document.querySelector('.null');
+        console.log(oNull);
+
+    </script>
+</body>
+</html>

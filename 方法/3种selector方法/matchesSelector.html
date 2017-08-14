@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>matchesSelector 方法</title>
+</head>
+<body>
+    <div id="box">
+        <h4>matchesSelector()方法接收一个CSS选择符参数，如果调用元素与该选择符相匹配，返回true；否则返回false\n </h4>
+    </div>
+    <div id="text">
+        由于兼容性问题，现在各个浏览器都只支持加前缀的方法。IE9+浏览器支持msMatchesSelector()方法，firefox支持mozMatchesSelector()方法，safari和chrome支持webkitMatchesSelector()方法
+    </div>
+
+    <script type="text/javascript">
+     。
+     //matchesSelector(节点,选择器) 比对该节点的css选择器 是否与输入的 selector 相同
+     function matchesSelector(element,selector){
+        if(element.matchesSelector){
+            return element.matchesSelector(selector);
+        }
+        if(element.msMatchesSelector){
+            return element.msMatchesSelector(selector);
+        }
+        if(element.mozMatchesSelector){
+            return element.mozMatchesSelector(selector);
+        }
+        if(element.webkitMatchesSelector){
+            return element.webkitMatchesSelector(selector);
+        }
+    };
+    console.log(matchesSelector(document.querySelector('#box'),'#box'));
+    console.log(document.body.matchesSelector('#box'));
+    </script>
+</body>
+</html>

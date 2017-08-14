@@ -6,6 +6,7 @@ var dbName = 'person',tableName = 'testTable';
 var indexedDB = window.indexedDB||window.webkitIndexedDB||window.mozIndexedDB||window.msIndexedDB;
 
 function init(){
+    //有数据库直接打开
     openRequest = indexedDB.open(dbName);
     //handle setup
     //新数据库被创建，数据库版本号修改时被触发
@@ -101,9 +102,9 @@ function init(){
             console.dir(preson);
         }
     });
-    //删除一条数据，（指定ID）
+    //删除数据库的一条数据，（指定ID）
     function deleteRecord(id){
-
+        //通过 事务transaction 获取数据库表
         var transaction = db.transaction([tableName],"readwrite");
         transaction.oncomplete = function(event){
             console.log("transaction complete");
@@ -111,13 +112,65 @@ function init(){
         transaction.onerror = function(event){
             console.dir(event);
         };
-
+        //得到objectStore对象
         var objectStore = transaction.objectStore(tableName);
         var removekey = parseInt(id);
+        //将 删除的 数据 输出
         var getRequest = objectStore.get(removekey);
         getRequest.onsuccess = function(e){
-            
+            var result = getRequest.result;
+            console.dir(result);
         }
-    }
+        //从 数据库中 删除索引值为removekey 的数据
+        var request = objectStore.delete(removekey);
+        request.onsuccess = function(e){
+            console.log("success delete record!");
+        };
+        request.onerror = function(e){
+            console.log("error delete record:",e);
+        };
+        //隐藏要删除的元素
+        document.getElementById(removekey).style.display = "none";
+    };
+    //查询一条数据
+    document.querySelector("#seletBtn").addEventListener("click",function(){
+        var curName = document.getElementById("selname").value;
+        //通过 事务transaction 获取数据库表
+        var transaction = db.transaction([tableName],"readwrite");
+        transaction.oncomplete = function(event){
+            console.log("transaction complete");
+        };
+        transaction.onerror = function(event){
+            console.dir(event);
+        };
+        var objectStore = transaction.objectStore(tableName);
+        //生成一个表示范围的Range对象，indexedDB调用 IDBKeyRange函数的.only方法进行查询
+        //相当于数据库的select语句
+        var boundKeyRange = IDBKeyRange.only(curName);
+        objectStore.index("name").openCursor(boundKeyRange).onsuccess = function(event){
+            var cursor = event.target.result;
+            if(!cursor){
+                return;
+            }
+
+            var rowData = cursor.value;
+
+            console.log(rowData);
+            document.getElementById("content").innerHTML = "";
+            render({key:cursor.value.id,name:cursor.value["name"],phone:cursor.value["phone"],address:cursor.value["address"]});
+            cursor.continue();
+        }
+    })
+    //删除数据库
+    document.querySelector("#deleteDB").addEventListener("click",ffunction(){
+        var deleteDB = indexedDB.deleteDatabase(dbName);
+        var content = document.querySelector("#content");
+        while(content.firstChild){
+            content.removeChild(content.firstChild);
+        }
+        deleteDB.onsuccess = function(event){
+            console.log("success delete dataBase!");
+        };
+    })
 }
 window.addEventListener("DOMContentLoaded",init,false);

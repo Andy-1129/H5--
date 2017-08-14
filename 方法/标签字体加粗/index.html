@@ -5,13 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>html标签加粗字体</title>
+    <style>
+        ul li:first-child{
+            font-size: 20px;
+            color:#865741;
+        }
+        p::first-letter{
+            font-size: 32px;
+            font-weight: 600;
+            color:red;
+            padding-left: 2em;
+        }
+        p::after{
+            content:"++++++++++最后加上内容!"
+        }
+        @font-face {
+            font-family: newFont;
+            src:url(WALTER__.TTF);
+        }
+        #sec{
+            font-family: newFont;
+            font-size: 24px;
+            color:#784596;
+        }
+    </style>
 </head>
 <body>
     <ul>
         <li>“em标签”:字体倾斜</li>
-        <li>“b标签”: 字体加粗</li>
+        <li id="sec">“b标签”: 字体加粗</li>
         <li>“br标签”: 换行</li>
     </ul>
-    <p><br>城的进口超市，她先是来到卖酒水的地方，<br>从这家首饰店离开之后，<em>女子又来到万象</em><br>并分别从两个展位拿了五瓶鸡尾酒和清酒，<b>一饮而尽。同时还打</b>开了一瓶巴黎水，同样喝的干干净净，之后扬长而去</p>
+    <p>城的进口超市，她先是来到卖酒水的地方，<br>从这家首饰店离开之后，<em>女子又来到万象</em><br>并分别从两个展位拿了五瓶鸡尾酒和清酒，<b>一饮而尽。同时还打</b>开了一瓶巴黎水，同样喝的干干净净，之后扬长而去</p>
 </body>
 </html>

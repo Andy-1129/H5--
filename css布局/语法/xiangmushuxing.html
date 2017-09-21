@@ -10,38 +10,40 @@
             width: 400px;
             height: 200px;
             border: 1px solid red;
-            display: flex;        
-            flex-flow: column nowrap;
-            align-content: flex-start;
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: flex-end;
         }
         .box{
             width: 100px;
             height: 50px;
             color: #fff;
-            background-color: #865241;
+            background-color: #865241 ;
             border: 5px solid #362547;
         }
-        /*.item1{
+        .item1{
+
             order:5;
         }
         .item2{
+            align-self: center;
             order: 3;
         }
         .item3{
             order: 4
         }
         .item4{
+            align-self: flex-end;
             order:1;
-        }*/
+        }
     </style>
 </head>
 <body>
     <div id="big">
-        <div class="item1 box">1</div>
-        <div class="item2 box">2</div>
-        <div class="item3 box">3</div>
-        <div class="item4 box">4</div>
-        <div class="item4 box">5</div>
+        <div class="item1 box" id="box1">1</div>
+        <div class="item2 box" id="box2">2+</div>
+        <div class="item3 box" id="box3">3-</div>
+        <div class="item4 box" id="box4">4ting</div>
     </div>
 </body>
 </html>

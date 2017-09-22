@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    min-height: 100vh;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+header,footer{
+    flex:auto;
+    background-color: #652416;
+}
+.box{
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    flex:auto;
+    justify-content: space-between;
+}
+.item1,.item3{
+     flex:0 0 12em;
+     background-color: #458156;
+}
+.item2{
+    /*flex: none;*/
+    background-color: #922417;
+}

@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.bigbox{
+    /*width: 800px;*/
+    height: 600px;
+    border:3px solid #ccc;
+    border-radius: 5%;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-content: space-between;
+}
+.box{
+    flex-basis: 100%;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+}
+.item{
+    margin: 5px;
+    /*width: 100px;
+    height: 100px;*/
+    background-color: #ddd;
+    
+}
+.box1 .item{
+    flex-basis: 50%;
+}
+.box2 .item{
+    flex-basis: 33.33%;
+}
+.box3 .item{
+    flex-basis: 25%;
+}
+.box4 .item{
+    width: 50%;
+}

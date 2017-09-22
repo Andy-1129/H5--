@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>输入框布局</title>
+    <style>
+    .box{
+        width: 300px;
+        height: 30px;
+        border: 1px solid #ccc;
+        display: -webkit-flex;
+        display: -ms-flex;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+    }
+    p{
+        /*width: 50px;*/
+        -ms-align-self: center;
+        align-self: center;
+        margin: 5px;
+    }
+    .input1{
+        -webkit-flex: auto;
+        -ms-flex: auto;
+        flex: auto;
+    }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <p><span>姓名</span></p>
+        <input class="input1" type="text">
+        <button class="btn">Search</button>
+    </div>
+</body>
+</html>

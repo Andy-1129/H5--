@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>流式布局</title>
+    <style>
+        .bigbox{
+            border:2px solid #ccc;
+            border-radius: 5px;
+            background-color: #ddd;
+            display: -webkit-flex;
+            display: -ms-flex;
+            display: flex;
+            /*width: 100vw;*/
+            flex-flow: row nowrap;
+            justify-content: space-around;
+        }
+        .boxin{
+            display: -webkit-flex;
+            display: -ms-flex;
+            display: flex;
+            width: 30vw;
+            flex-flow: row wrap;
+            align-content: flex-start;
+            border:1px solid red;
+        }
+        .box{
+            /*width: 25em;*/
+            box-sizing: border-box;
+            flex:0 0 25%;
+            height: 50px;
+            border:1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <div class="bigbox">
+        <div class="boxin">
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+        </div>
+        <div class="boxin">
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+        </div>
+        <div class="boxin">
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+        </div>
+    </div>
+</body>
+</html>

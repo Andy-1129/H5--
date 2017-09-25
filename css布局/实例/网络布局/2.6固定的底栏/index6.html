@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>固定的底栏</title>
+    <style>
+    .bigbox{
+        display: -webkit-flex;
+        display: -ms-flex;
+        display: flex;
+        min-height: 100vh;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+    .main{
+        -webkit-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+    }
+    footer{    
+        background-color: #ccc;
+    }
+    </style>
+</head>
+<body class="bigbox">
+    <header>TOCKIL LONKIG</header>
+    <div class="main">
+        <h1>主要部分</h1>
+        <article>有时，页面内容太少，无法占满一屏的高度，底栏就会抬高到页面的中间。这时可以采用Flex布局，让底栏总是出现在页面的底部</article>
+    </div>
+    <footer>
+        <img src="123.png" alt="">
+    </footer>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vertical-align 属性</title>
+    <style>
+    p{
+        display: block;
+        max-width: 100vw;
+        border:1px solid red;
+        font-size: 30px;
+    }
+    p img{
+        border: 1px solid red;
+    }
+    #pic{vertical-align: inherit;}
+    </style>
+</head>
+<body>
+    <p>
+        改变<sub>A</sub><sup>X</sup><img id = "pic" src="22.png" alt="">换<sup>M</sup>内
+    </p>
+    <p>
+        原始<sub>A</sub><sup>X</sup><img src="22.png" alt="">换<sup>M</sup>内
+    </p>
+</body>
+</html>

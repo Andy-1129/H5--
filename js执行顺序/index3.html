@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>body内部和onload函数执行顺序</title>
+
+</head>
+<ul>
+    <li>body 上的 onload  函数</li>
+    <li>body 外部函数</li>
+    <li>body 内部函数</li>
+    <li>的加载执行顺序</li>
+</ul>
+<script type="text/javascript">
+// body 上的 onload  函数
+function fnOnLoad(){
+console.log("I am outside the Wall!");
+}
+// body 外部函数
+console.log("I am outside the Wall 222!");
+</script>
+
+<body onload="fnOnLoad();">
+    <script type="text/javascript">
+    //body 内部函数
+    console.log("I am inside the Wall..");
+
+    </script>
+</body>
+</html>

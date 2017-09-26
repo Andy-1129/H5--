@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>不同代码块之间的函数调用</title>
+</head>
+<body>
+    <!-- 代码块：一对script 标签包裹着的js代码 -->
+    <script type="text/javascript">
+        function fn3(){
+            console.log(33333);
+        }
+        const fn4 = function(){
+            console.log(4444);
+        }
+    </script>
+    <!--函数调用 应该 放在定义之前 正常调用  -->
+    <script type="text/javascript">
+        //不同代码块 之间的 函数调用
+        fn3();
+        fn4();
+    </script>
+    <!--放在之后无输出  -->
+    <!-- <script type="text/javascript">
+        function fn3(){
+            console.log(33333);
+        }
+        const fn4 = function(){
+            console.log(4444);
+        }
+    </script> -->
+</body>
+</html>

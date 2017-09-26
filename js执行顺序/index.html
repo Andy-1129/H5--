@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>js执行顺序</title>
+</head>
+<body>
+    <p>JavaScript是一种描述型脚本语言，由浏览器进行动态的解析与执行。函数的定义方式大体有以下两种，浏览器对于不同的方式有不同的解析顺序。</p>
+    <script type="text/javascript">
+    //定义式函数 浏览器进行预处理，赋值式函数  浏览器不进行预处理
+    fn1();
+    fn2();
+    //定义式 函数
+        function fn1(){
+            console.log(123);
+        }
+        //赋值式  函数
+        const fn2 = function(){
+            console.log(456);
+        }
+        //不同代码块 之间的 函数调用
+        fn3();
+        fn4();
+    </script>
+    <!-- 代码块：一对script 标签包裹着的js代码 -->
+    <script type="text/javascript">
+        function fn3(){
+            console.log(33333);
+        }
+        const fn4 = function(){
+            console.log(4444);
+        }
+    </script>
+</body>
+</html>

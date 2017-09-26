@@ -16,16 +16,16 @@
 <script type="text/javascript">
 // body 上的 onload  函数
 function fnOnLoad(){
-console.log("I am outside the Wall!");
+console.log("I am outside the Wall!  第三执行");
 }
 // body 外部函数
-console.log("I am outside the Wall 222!");
+console.log("I am outside the Wall 222  第一执行!");
 </script>
 
 <body onload="fnOnLoad();">
     <script type="text/javascript">
     //body 内部函数
-    console.log("I am inside the Wall..");
+    console.log("I am inside the Wall..第二执行");
 
     </script>
 </body>

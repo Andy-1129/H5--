@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>正则表达式的几个方法</title>
+</head>
+<body>
+    <ul>
+        <li>RegExp 对象有 3 个方法：test()、exec() 以及 compile()</li>
+        <li>test()方法搜索字符串指定的值，根据结果并返回真或假</li>
+        <li></li>
+        <li></li>
+    </ul>
+    <ul>
+        <li class="text1"></li>
+        <li class="text2"></li>
+        <li class="text3"></li>
+    </ul>
+    <script type="text/javascript">
+        // test() 方法
+        var text1 = new RegExp("e");
+        document.write(text1.test("ksje dfks ljfsi sdfnsekd"));
+        //exec()方法
+        let text2 = new RegExp("sd");
+        let [a,b] = ['nsdfk jsdfkjsfjs jksjdhfksfk sdfks','jffkjs jsghdfkjsfdf' ]
+        document.write(text2.exec(a));
+        document.write(text2.exec(b));
+        // compile() 方法
+        let str = "Every man in the world! Every woman on earth!";
+        patt = /man/g;
+        str2 = str.replace(patt,"person");
+        console.log(str2);
+
+        patt = /(wo)?man/g;
+        patt.compile(patt);
+        str3 = str.replace(patt,"person");
+        console.log(str3);
+    </script>
+</body>
+</html>

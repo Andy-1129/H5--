@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>js对象日期常用方法</title>
+</head>
+<body>
+    <p>js日期对象的常用方法 </p>
+    <p>输出的值得类型是：number</p>
+    <p>date.js 中有写的常用方法,需要检查</p>
+    <script type="text/javascript" src="date.js"></script>
+    <script type="text/javascript">
+        let mydate = new Date();
+        let year = mydate.getYear();
+        console.log(typeof year);
+
+        document.write('当前完整年份(1970-至今)：'+mydate.getFullYear()+'<br />');
+        document.write('当前月份(0-11,0代表1月)：'+mydate.getMonth()+'<br />');
+        document.write('当前日期(1-31)：'+mydate.getDate()+'<br />');
+        document.write('当前小时数(0-23)：'+mydate.getHours()+'<br />');
+        document.write('当前分钟数(0-59)：'+mydate.getMinutes()+'<br />');
+        document.write('当前秒数(0-59)：'+mydate.getSeconds()+'<br />');
+        document.write('当前毫秒数(0-999)：'+mydate.getMilliseconds()+'<br />');
+        document.write('当前时间(从1970.1.1开始的毫秒数)：'+mydate.getTime()+'<br />');
+        document.write('当前日期时间：'+mydate.toLocaleString()+'<br />');
+        document.write('当前星期几(0-6,0代表星期天)：'+mydate.getDay()+'<br />');
+        document.write('当前年份后两位：'+mydate.getYear()+'<br />');
+            console.log(mydate.isLeapYear());
+            //console.log(daysBetween(2017-05-03,2017-06-01));
+           console.log(mydate.DateAdd('s',0));
+        //    console.log(mydate.Format());
+    </script>
+</body>
+</html>

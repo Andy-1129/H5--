@@ -42,7 +42,26 @@
         //concat()
         let str6 = '123';
         console.log(str6.concat(str4,str5));
-        
+        //match()
+        let str10 = 'dhfjs jshf aeoi vua e fis skdj';
+        console.log(str10.match(/js/g));
+        console.log(str10.match(/mn/g));
+
+
+        //其它例子
+        let str7 = "奥卡福福克斯浪蝶狂蜂,东方斯卡拉快递费,克里斯多夫就,dkflskfls.s，看是否绿山咖啡看是否看到了,快来丰满索拉卡,kjsdfnks.";
+        let str8 = str7.replace(/,/g,'.<br />');
+        let str9 = str7.split(',',20);
+        for(let i = 0;i<str9.length;i++){
+            document.write(str9[i]);
+        }
+        console.log(str9);
+        document.write(str8);
+        // var str8 = 'skjfs kdfklsdflksdlfk jdjflksdlfj ldjflksd lsflk';
+        // console.log(str8.replace('s','10'));
+
+
+
     </script>
 </body>
 </html>

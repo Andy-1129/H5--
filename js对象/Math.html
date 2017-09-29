@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>js算数Math对象常用方法</title>
+</head>
+<body>
+    <p>js算数对象 Math 对象的常用方法</p>
+    <button id="btn">产生随机数</button>
+    <p>产生随机数[0,10)：<span id="text"></span></p>
+    <script type="text/javascript">
+        document.write('最大值：'+Math.max(12,6,32,25)+'<br />');
+        document.write('最小值：'+Math.min(12,6,32,25)+'<br />');
+        document.write('向上取整(6.1)：'+Math.ceil(6.1)+'<br />');
+        document.write('向上取整(6.5)：'+Math.ceil(6.5)+'<br />');
+        document.write('向上取整(6.7)：'+Math.ceil(6.7)+'<br />');
+        document.write('向下取整(6.1)：'+Math.floor(6.1)+'<br />');
+        document.write('向下取整(6.5)：'+Math.floor(6.5)+'<br />');
+        document.write('向下取整(6.7)：'+Math.floor(6.7)+'<br />');
+        document.write('四舍五入(6.1)：'+Math.round(6.1)+'<br />');
+        document.write('四舍五入(6.5)：'+Math.round(6.5)+'<br />');
+        document.write('四舍五入(6.7)：'+Math.round(6.7)+'<br />');
+        document.write('绝对值(-6.7)：'+Math.abs(-6.7)+'<br />');
+        document.write('只保留整数部分(-6.7)：'+parseInt(-6.7)+'<br />');
+        document.write('只保留整数部分(6.7)：'+parseInt(6.7)+'<br />');
+
+        let btn = document.querySelector("#btn");
+        let res;
+        btn.addEventListener("click",add);
+        function add(){
+            res = Math.floor(Math.random()*10);
+            document.querySelector("#text").innerHTML = res;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>条件运算符:?</title>
+  <script>
+    //请用户输入工资，转为小数后，保存在salary中
+  /*var salary=parseFloat(prompt("请输入工资"));
+    //(如果)salary>=20000，就输出“土豪”
+    salary>=20000?console.log("土豪"):
+    //(否则 如果)salary<8000，就输出“屌丝”
+      salary<8000?console.log("屌丝"):
+    //(否则，)就输出“一般人”
+                console.log("一般人");*/
+
+    //请用户输入体重(kg)，保存在变量weight中
+    var weight=prompt("请输入体重(kg)");
+    //请用户输入身高(m)，保存在变量height中
+    var height=prompt("请输入身高(m)");
+    //计算体重/(身高*身高),结果保存在变量result中
+    var result=weight/(height*height);
+    console.log(
+        //(如果)result>25，输出“胖”
+        result>25?"胖":
+        //(否则，如果)result<20，输出"瘦"
+        result<20?"瘦":
+        //(否则)输出“正常”
+                "正常"
+    );
+  </script>
+ </head>
+ <body>
+
+ </body>
+</html>

@@ -10,23 +10,17 @@
     <ul>
         <li>RegExp 对象有 3 个方法：test()、exec() 以及 compile()</li>
         <li>test()方法搜索字符串指定的值，根据结果并返回真或假</li>
-        <li></li>
-        <li></li>
-    </ul>
-    <ul>
-        <li class="text1"></li>
-        <li class="text2"></li>
-        <li class="text3"></li>
+        <li>exec()方法:判断字符串中是否有对应规则的字符，若有返回相应字符，没有返回 null</li>
     </ul>
     <script type="text/javascript">
         // test() 方法
         var text1 = new RegExp("e");
-        document.write(text1.test("ksje dfks ljfsi sdfnsekd"));
+        document.write("test()方法："+text1.test("ksje dfks ljfsi sdfnsekd")+"  ;<br />");
         //exec()方法
         let text2 = new RegExp("sd");
         let [a,b] = ['nsdfk jsdfkjsfjs jksjdhfksfk sdfks','jffkjs jsghdfkjsfdf' ]
-        document.write(text2.exec(a));
-        document.write(text2.exec(b));
+        document.write("exec()方法："+text2.exec(a)+"  ;<br />");
+        document.write("exec()方法："+text2.exec(b)+"  ;<br />");
         // compile() 方法
         let str = "Every man in the world! Every woman on earth!";
         patt = /man/g;

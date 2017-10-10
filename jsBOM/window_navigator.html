@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>window navigator对象</title>
+</head>
+<body>
+    <p>window navigator对象:即浏览器对象</p>
+    <script type="text/javascript" src="userAgent.js"></script>
+    <script type="text/javascript">
+        document.write("浏览器代码名："+window.navigator.appCodeName+"<br />")
+        document.write("浏览器名称："+window.navigator.appName+"<br />")
+        document.write("浏览器平台和版本信息："+window.navigator.appVersion+"<br />")
+        document.write("浏览器是否启用cookie的布尔值："+window.navigator.cookieEnabled+"<br />")
+        document.write("浏览器的操作平台："+window.navigator.platform+"<br />")
+
+        document.write("由客户机发送服务器的 user-agent头部的值："+window.navigator.userAgent+"<br />")
+
+        document.write("浏览器是："+getBrowser()+"<br />")
+
+    </script>
+</body>
+</html>

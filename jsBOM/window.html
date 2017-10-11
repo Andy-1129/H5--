@@ -9,7 +9,7 @@
 <body>
     <input type="button" value="打开新窗口" id="open">
     <input type="button" value="关闭当前窗口" id="close">
-
+    <div id="txt"></div>
     <script type="text/javascript">
         document.write(" <br /> "+"浏览器窗口内部宽度："+window.innerWidth+" <br /> ");
         document.write("浏览器窗口内部高度："+window.innerHeight+" <br /> ");
@@ -18,14 +18,22 @@
         document.write("屏幕高度："+screen.availHeight+" <br /> ");
         // 其它方法
         document.getElementById("open").addEventListener("click",open01);
+        document.getElementById("open").addEventListener("mouseenter",focus01);
+        document.getElementById("open").addEventListener("mouseleave",blur01);
         document.getElementById("close").addEventListener("click",close01);
+        function focus01(){
+            document.getElementById("txt").innerHTML = "获得焦点";
+        }
+        function blur01(){
+            document.getElementById("txt").innerHTML = "失去焦点";
+        }
         function open01(){
             window.open('https://www.hao123.com/');
         }
         function close01(){
             window.close();
         }
-        
+
     </script>
 </body>
 </html>

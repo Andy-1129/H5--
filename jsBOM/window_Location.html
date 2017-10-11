@@ -8,11 +8,23 @@
 </head>
 <body>
     <input type="button" value="加载新文档" onclick="newDoc()">
+    <input type="button" value="重新加载当前页面" onclick="newDoc2()">
+    <input type="button" value="新文文档替换前页面" onclick="newDoc3()">
     <script>
     //location.assign() 方法加载新的文档。
 function newDoc()
   {
   window.location.assign("https://www.hao123.com/")
+  }
+    //location.reload() 重新加载当前页面。
+function newDoc2()
+  {
+  window.location.reload();
+  }
+    //location.replace() 重新加载当前页面。
+function newDoc3()
+  {
+  window.location.replace("https://www.baidu.com/");
   }
 </script>
 </body>

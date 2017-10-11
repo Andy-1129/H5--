@@ -10,15 +10,20 @@
     <p>通过对浏览器网址历史的操作</p>
     <input type="button" value="前进" id="btn1">
     <input type="button" value="后退" id="btn2">
+    <input type="button" value="去某一页" id="btn3">
     <script type="text/javascript">
         let btn01 = document.getElementById("btn1");
         btn01.addEventListener("click",forward);
         document.getElementById("btn2").addEventListener("click",back);
+        document.getElementById("btn3").addEventListener("click",goTo);
         function forward(){
             window.history.forward();
         }
         function back(){
             window.history.back();
+        }
+        function goTo(){
+            window.history.go();
         }
     </script>
 </body>

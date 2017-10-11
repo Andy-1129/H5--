@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>4中时间函数</title>
+</head>
+<body>
+    <script type="text/javascript">
+
+        let startTime  = new Date().getTime();
+        let interval = setInterval(time1,200);
+        let timeout = setTimeout(time2,2000);
+        function time1(){
+            if(new Date().getTime() - startTime > 1000){
+                clearInterval(interval);
+            }
+            let a =  1;
+            console.log(a);
+        }
+        function time2(){
+            //时间没用  因为只执行一次
+            if(new Date().getTime() - startTime > 1000){
+                clearTimeout(timeout);
+                let a =  2;
+                console.log(a);
+            }
+
+        }
+    
+    </script>
+</body>
+</html>

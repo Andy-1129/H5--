@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>数组新方法</title>
+</head>
+<body>
+    <ul>
+        <li>indexOf()方法返回在该数组中第一个找到的元素位置，如果它不存在则返回-1。
+</li>
+        <li>filter()方法创建一个新的匹配过滤条件,返回值是 原数组经过 filter()后的 新数组。
+</li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <script type="text/javascript">
+        //indexOf
+        let arr = ['hellow',1,2,3,'world'];
+        document.write("indexOf方法："+arr.indexOf('world')+'<br />');
+        //filter
+        let arr1 = [   {"name":"apple", "count": 2},   {"name":"orange", "count": 5},   {"name":"pear", "count": 3},   {"name":"orange", "count": 16}];
+        let newArr1 = arr1.filter(function(item){
+            return item.name ==="orange";
+        })
+        console.log(newArr1);
+        //forEach()
+        arr.forEach(function(item,index){
+            console.log(item);
+        })
+
+        //map()
+        function getNewArr(){
+            return arr1.map(function(item,index){
+                item.fullName = [item.name,item.count].join(" ");
+                return item;
+            })
+        }
+        console.log(getNewArr());
+        //reduce
+        let arr5 = ["apple","orange","apple","orange","pear","orange"];
+
+function getWordCnt(){
+  return arr5.reduce(function(prev,next){
+    prev[next] = (prev[next] + 1) || 1;
+    return prev;
+  },{});
+}
+
+console.log(getWordCnt());
+
+
+    </script>
+</body>
+</html>

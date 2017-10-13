@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body onkeydown="keydown()">
+    <form name="loginForm" action="index1.html" method="post">
+        <input type="text" name="userName" placeholder="账户名">
+        <input type="password" name="password" id="password" placeholder="密码">
+        <input type="submit" value="登录" id="dl">
+    </form>
+    <script type="text/javascript">
+    // 用法一  ： 通过 事件调用
+        document.getElementById("dl").addEventListener("click",check);
+        function check(){
+            let formname = document.loginForm;
+            if(formname.userName.value == ""){
+                alert("请输入用户名");
+                formname.userName.focus();
+                return false;
+            }
+            if(formname.password.value ==""){
+                alert("请输入密码");
+                formname.password.focus();
+                return false;
+            }
+            formname.submit();
+        }
+        function on_return(){
+            if(window.event.keyCode ==13){
+                if(document.all('dl') != null){
+                    document.all('dl').click();
+                }
+            }
+        }
+        // 用法二 在 body上添加事件
+        function keydown(){
+            if(window.event.keyCode ==27){
+                alert(123)
+            }
+        }
+    </script>
+</body>
+</html>

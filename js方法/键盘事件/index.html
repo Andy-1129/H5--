@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>键盘事件</title>
+</head>
+<body>
+    <button type="button" id="btn_selector"> 　　
+<label>精确筛选</label>
+</button>
+    <script type="text/javascript">
+    //处理键盘事件
+function doKey(e){
+    var ev = e || window.event;//获取event对象
+    var obj = ev.target || ev.srcElement;//获取事件源
+    var t = obj.type || obj.getAttribute('type');//获取事件源类型
+    if(ev.keyCode == 8 && t != "password" && t != "text" && t != "textarea"){
+        return false;
+    }
+}
+//禁止后退键 作用于Firefox、Opera
+document.onkeypress=doKey;
+//禁止后退键  作用于IE、Chrome
+document.onkeydown=doKey;
+
+
+    function keydown(e) {
+var currKey=0,e=e||event;
+currKey=e.keyCode||e.which||e.charCode;//支持IE、FF
+if (currKey == 13) {
+document.getElementByIdx_x("btn_selector").click();
+}
+}
+document.onkeydown = keydown;//onkeydown事件调用方式
+    </script>
+</body>
+</html>

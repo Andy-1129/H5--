@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>es6/es7函数的扩展</title>
+</head>
+<body>
+    <script type="text/javascript">
+        function f(x,y=5,z){
+            return [x,y,z];
+        }
+        console.log(f());
+        console.log(f(1));
+    //    console.log(f(1,,2));
+        console.log(f(1,undefined,2));
+        console.log(f(1,null,2));
+        //参数作用域
+        let x = 1;
+        function f2(x,y=x){
+            console.log(x,y);
+        }
+        f2();
+        f2(2);
+        f2(2,1);
+        //变量的指向问题
+        function f3(y=x) {
+            let x = 2;
+            console.log(x,y);
+        }
+        f3();
+        f3(3);
+    </script>
+</body>
+</html>
